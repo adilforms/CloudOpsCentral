@@ -10,14 +10,14 @@ def dockerImageName() {
 def dockerBuild(imageName) {
   def build = sh(returnStdout: true, script: """#!/bin/bash -el
     echo "Building image..."
-    docker build -t adilforms/${imageName} .
+    docker build -t cbdatascience-cbdr-docker.jfrog.io/${imageName} .
    """).trim()
 }
 
 def dockerPush(imageName) {
   def push = sh(returnStdout: true, script: """#!/bin/bash -el
     echo "Publishing..."
-    docker push adilforms/${imageName}
+    docker push cbdatascience-cbdr-docker.jfrog.io/${imageName}
    """).trim()
 }
 def dockerfile = readfile libraryResource 'DOCKERFILE'       //Loading Dockerfile into variable from resource
