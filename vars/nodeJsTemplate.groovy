@@ -1,9 +1,9 @@
 def dockerImageName() {
   def imageName = sh(returnStdout: true, script: """#!/bin/bash -l
       version=\$(git rev-parse --short HEAD)
-      PName=$(echo $JOB_NAME | tr / . | tr "[:upper:]" "[:lower:]")
-      PackageName=$PName
-      echo "$PackageName.$version:$BRANCH_NAME"
+      PName=\$(echo $JOB_NAME | tr / . | tr "[:upper:]" "[:lower:]")
+      PackageName=\$PName
+      echo "\$PackageName.\$version:\$BRANCH_NAME"
    """).trim()
 }
 
