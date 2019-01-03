@@ -41,9 +41,9 @@ stage('Build'){
     echo 'building'
     sh 'npm install'                    
        
-  imageName = dockerImageName()
+  //imageName = dockerImageName()
   
-        dockerBuild(imageName)
+        dockerBuild(dockerImageName())
  
 }
 stage('Test'){ 
