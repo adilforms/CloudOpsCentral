@@ -11,7 +11,7 @@ def dockerBuild(imageName) {
   def build = sh(returnStdout: true, script: """#!/bin/bash -el
     echo "Building image..."
    
-   docker build -t adilforms/testing.simple.1234:test .
+   docker build -t adilforms/${imageName} .
    
    """).trim()
 }
